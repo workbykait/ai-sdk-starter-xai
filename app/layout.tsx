@@ -4,36 +4,34 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { Header } from "@/components/header";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "Mind Bloom",
-  description:
-    "This starter project uses xAI with the AI SDK via the Vercel Marketplace",
-};
+import Link from 'next/link';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`}
-      >
-        <Header />
+      <body className="bg-gray-100 min-h-screen">
+        <nav className="bg-gray-800 text-white p-4">
+          <div className="max-w-4xl mx-auto flex justify-between">
+            <div className="space-x-4">
+              <Link href="/" className="hover:underline">
+                🏠
+              </Link>
+              <Link href="/chat" className="hover:underline">
+                Chat 💬
+              </Link>
+              <Link href="/login" className="hover:underline">
+                Login
+              </Link>
+            </div>
+          </div>
+        </nav>
         <main>{children}</main>
-        <Toaster />
+        <Analytics />
       </body>
     </html>
   );
