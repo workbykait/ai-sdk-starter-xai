@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '../../lib/supabase';
+import { AuthError } from '@supabase/supabase-js';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -31,7 +32,7 @@ export default function Login() {
         if (error) throw error;
         router.push('/chat');
       }
-    } catch (err: any) {
+    } catch (err: AuthError) {
       setError(err.message);
     }
   };
