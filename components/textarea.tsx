@@ -25,6 +25,7 @@ export function Textarea({
         onChange={handleInputChange}
         placeholder="Say something..."
         className="flex-1 rounded-md border-[#A0A0A0] bg-[#303030] text-[#F7F7F7]"
+        disabled={isLoading}
       />
       {isLoading ? (
         <Button
@@ -36,7 +37,6 @@ export function Textarea({
       ) : (
         <Button
           type="submit"
-          disabled={status !== "awaiting_message"}
           className="bg-[#A0A0A0] text-[#303030] hover:bg-[#E0E0E0]"
         >
           Send
