@@ -1,10 +1,10 @@
 export default function ProfilePage() {
   return (
-    <div className="min-h-screen bg-white text-black flex">
+    <div className="min-h-screen bg-white text-black flex pt-16">
       {/* Sidebar */}
-      <div className="w-64 bg-[#606060] p-4 fixed h-screen">
+      <div className="w-64 bg-[#606060] p-4 fixed h-[calc(100vh-64px)] top-16 overflow-y-auto">
         <h2 className="text-xl font-bold text-white mb-4">Dashboard</h2>
-        <div className="max-h-[calc(100vh-100px)] overflow-y-auto">
+        <div>
           <h3 className="text-lg font-semibold text-white mb-2">Chat History</h3>
           <div className="space-y-2">
             <div>
