@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import { User } from "@supabase/supabase-js";
 
 export default function ProfilePage() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
   const [messages, setMessages] = useState([]);
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
@@ -24,7 +25,7 @@ export default function ProfilePage() {
       }
     };
     fetchUser();
-  }, []);
+  }, [router]);
 
   const fetchMessages = async (userId: string) => {
     const { data } = await supabase
