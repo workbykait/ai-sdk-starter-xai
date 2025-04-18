@@ -2,20 +2,20 @@ export default function ProfilePage() {
   return (
     <div className="min-h-screen bg-white text-black flex pt-16">
       {/* Sidebar */}
-      <div className="w-64 bg-[#606060] p-4 fixed h-[calc(100vh-64px)] top-16 overflow-y-auto">
+      <div className="w-64 bg-[#f8f8f8] p-4 fixed h-[calc(100vh-64px)] top-16 overflow-y-auto">
         <h2 className="text-xl font-bold text-white mb-4">Dashboard</h2>
         <div>
           <h3 className="text-lg font-semibold text-white mb-2">Chat History</h3>
           <div className="space-y-2">
             <div>
-              <p className="text-sm text-[#A0A0A0]">Apr 18, 2025, 9:00 AM</p>
+              <p className="text-sm text-[#030303]">Apr 18, 2025, 9:00 AM</p>
               <p className="text-white">Hello, how can I assist you today?</p>
             </div>
             <div>
-              <p className="text-sm text-[#A0A0A0]">Apr 18, 2025, 9:02 AM</p>
+              <p className="text-sm text-[#030303]">Apr 18, 2025, 9:02 AM</p>
               <p className="text-white">I’m working on a project!</p>
             </div>
-            <p className="text-[#A0A0A0] italic">Mock chat history...</p>
+            <p className="text-[#030303] italic">Mock chat history...</p>
           </div>
         </div>
       </div>
@@ -24,21 +24,21 @@ export default function ProfilePage() {
         <h1 className="text-3xl font-bold mb-8">Profile Dashboard</h1>
         {/* Boxes for Critical Thinking, Emotional Regulation, Hazard Handling */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="bg-[#E8ECEF] rounded-lg p-4 shadow-sm">
+          <div className="bg-[#f8f8f8] rounded-lg p-4 shadow-sm">
             <h3 className="text-lg font-semibold mb-2">Critical Thinking</h3>
-            <p className="text-[#6B7280]">
+            <p className="text-[#030303]">
               Practice structured problem-solving to make clear decisions. Try breaking tasks into smaller steps.
             </p>
           </div>
-          <div className="bg-[#E8ECEF] rounded-lg p-4 shadow-sm">
+          <div className="bg-[#f8f8f8] rounded-lg p-4 shadow-sm">
             <h3 className="text-lg font-semibold mb-2">Emotional Regulation</h3>
-            <p className="text-[#6B7280]">
+            <p className="text-[#030303]">
               Use mindfulness techniques to stay calm under stress. Take a deep breath before reacting.
             </p>
           </div>
-          <div className="bg-[#E8ECEF] rounded-lg p-4 shadow-sm">
+          <div className="bg-[#f8f8f8] rounded-lg p-4 shadow-sm">
             <h3 className="text-lg font-semibold mb-2">Hazard Handling</h3>
-            <p className="text-[#6B7280]">
+            <p className="text-[#030303]">
               Identify potential risks early. Create a checklist to stay prepared for challenges.
             </p>
           </div>
