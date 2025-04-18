@@ -1,5 +1,5 @@
 import { supabase } from '../lib/supabase';
-import Header from '../components/Header';
+import Header from '../components/header';
 
 export default async function RootLayout({
   children,
