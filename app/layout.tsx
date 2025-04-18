@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { Header } from "@/components/header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Mind Bloom",
   description:
-    "Let's talk about it →",
+    "This starter project uses xAI with the AI SDK via the Vercel Marketplace",
 };
 
 export default function RootLayout({
@@ -27,9 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#303030] text-[#F7F7F7]`}
       >
-        {children}
+        <Header />
+        <main>{children}</main>
         <Toaster />
       </body>
     </html>
