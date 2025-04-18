@@ -1,29 +1,38 @@
-import Link from "next/link";
+'use client';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { supabase } from '../lib/supabase';
 
-export const Header = () => {
+export default function Header({ user }: { user: any }) {
+  const router = useRouter();
+
+  const signOut = async () => {
+    await supabase.auth.signOut();
+    router.push('/login');
+  };
+
   return (
-    <div className="fixed right-0 left-0 w-full top-0  text-[#303030]">
-      <div className="flex justify-between items-center p-4">
-        <div className="flex flex-row items-center gap-4">
-          <Link href="/" className="text-2xl hover:text-[#E0E0E0]">
-            💬
+    <nav className="bg-gray-800 text-white p-4">
+      <div className="max-w-4xl mx-auto flex justify-between">
+        <div className="space-x-4">
+          <Link href="/chat" className="hover:underline">
+            Chat 💬
           </Link>
-          <Link href="/profile" className="text-2xl hover:text-[#E0E0E0]">
-            👤
+          <Link href="/profile" className="hover:underline">
+            Profile 🧑
           </Link>
-          <Link href="/game" className="text-2xl hover:text-[#E0E0E0]">
-            🎮
-          </Link>
+          <span>🎮</span>
         </div>
-        <div className="flex flex-row items-center gap-2">
-          <Link
-            href="/login"
-            className="rounded-md bg-[#A0A0A0] px-4 py-2 text-[#303030] hover:bg-[#E0E0E0]"
-          >
+        {user ? (
+          <button onClick={signOut} className="hover:underline">
+            Sign Out
+          </button>
+        ) : (
+          <Link href="/login" className="hover:underline">
             Sign In
           </Link>
-        </div>
+        )}
       </div>
-    </div>
+    </nav>
   );
-};
+}
