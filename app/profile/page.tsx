@@ -5,10 +5,22 @@ import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { User } from "@supabase/supabase-js";
 
+interface Message {
+  content: string;
+  created_at: string;
+}
+
+interface Task {
+  id: number;
+  title: string;
+  tier: string;
+  completed: boolean;
+}
+
 export default function ProfilePage() {
   const [user, setUser] = useState<User | null>(null);
-  const [messages, setMessages] = useState([]);
-  const [tasks, setTasks] = useState([]);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [newTask, setNewTask] = useState("");
   const [newTaskTier, setNewTaskTier] = useState("Urgent");
   const router = useRouter();
@@ -92,7 +104,7 @@ export default function ProfilePage() {
             {messages.length === 0 ? (
               <p className="text-[#A0A0A0]">No chat history yet.</p>
             ) : (
-              messages.map((msg: { content: string; created_at: string }, index: number) => (
+              messages.map((msg, index) => (
                 <div key={index} className="mb-2">
                   <p className="text-sm text-[#A0A0A0]">
                     {new Date(msg.created_at).toLocaleString()}
@@ -134,12 +146,9 @@ export default function ProfilePage() {
               <div key={tier} className="mb-4">
                 <h3 className="text-lg font-medium mb-2">{tier}</h3>
                 {tasks
-                  .filter((task: { tier: string }) => task.tier === tier)
-                  .map((task: { id: number; title: string; completed: boolean }) => (
-                    <div
-                      key={task.id}
-                      className="flex items-center gap-2 mb-2"
-                    >
+                  .filter((task) => task.tier === tier)
+                  .map((task) => (
+                    <div key={task.id} className="flex items-center gap-2 mb-2">
                       <input
                         type="checkbox"
                         checked={task.completed}
