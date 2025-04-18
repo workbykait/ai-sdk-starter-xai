@@ -13,4 +13,4 @@ export type modelID = keyof typeof languageModels;
 
 export const MODELS = Object.keys(languageModels);
 
-export const defaultModel: modelID = "grok-3-mini";
+export const defaultModel: modelID = "grok-3-latest";
