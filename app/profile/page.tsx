@@ -1,6 +1,6 @@
 export default function ProfilePage() {
   return (
-    <div className="min-h-screen bg-[#303030] text-[#F7F7F7] flex">
+    <div className="min-h-screen  text-[#303030] flex">
       {/* Sidebar */}
       <div className="w-64 bg-[#606060] p-4 fixed h-screen">
         <h2 className="text-xl font-bold mb-4">Dashboard</h2>
