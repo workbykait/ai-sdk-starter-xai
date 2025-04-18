@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.45.4"
     "@ai-sdk/react": "^1.2.9",
     "@ai-sdk/xai": "^1.2.13",
     "@opentelemetry/api-logs": "^0.200.0",
