@@ -3,8 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { Header } from "@/components/header";
-
-import Link from 'next/link';
 import { Analytics } from '@vercel/analytics/react';
 
 export default function RootLayout({
