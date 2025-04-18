@@ -5,6 +5,12 @@ export const Header = () => {
     <div className="fixed right-0 left-0 w-full top-0 text-[#303030]">
       <div className="flex justify-between items-center p-4">
         <div className="flex flex-row items-center gap-4">
+          <Link href="/" className="hover:underline">
+                🏠
+              </Link>
+              <Link href="/" className="hover:underline">
+                Home
+              </Link>
           <Link href="/chat" className="text-2xl hover:text-[#E0E0E0]">
             💬
           </Link>
