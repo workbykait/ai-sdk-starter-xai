@@ -8,9 +8,6 @@ export const Header = () => {
           <Link href="/" className="hover:underline">
                 🏠
               </Link>
-              <Link href="/" className="hover:underline">
-                Home
-              </Link>
           <Link href="/chat" className="text-2xl hover:text-[#E0E0E0]">
             💬
           </Link>
